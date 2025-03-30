@@ -1,24 +1,25 @@
 import { Hono } from 'hono'
 import { renderer } from './renderer'
 import { serveStatic } from '@hono/node-server/serve-static'
-import * as fs from 'fs';
 import { marked } from 'marked';
 
-// function loadMarkdown(filePath: string): string {
-//   const markdown = fs.readFileSync(filePath, 'utf-8');
-//   return marked(markdown, { async: false }); // Converts Markdown to HTML
-// }
 
 const cloudText = marked(`# Cloud Expertise
   - AWS & Azure expertise
   - Terraform & CloudFormation`);
 
-  const resumeText = marked(`# Senior Network Engineer - Hertz
-    ### (November 2023 - Present)
-    - Responsible for Observability tooling 
-      - Grafana, InfluxDB, Infinity, and Prometheus 
-    - Automation tools built with NodeJS and Deno 
-    - Responsible for AWS Networking globally`);
+const resumeText = marked(`## Senior Network Engineer - Hertz 
+  ### November 2023 - Present
+  - Responsible for Observability tooling:
+    - Grafana, InfluxDB, Infinity, and Prometheus
+  - Automation tools built with NodeJS and Deno
+  - Responsible for AWS Networking globally:
+    - DXGWs, VIFs, TGWs, VPCs, and route tables
+    - Route53 VPC resolvers and inbound/outbound endpoints
+  - Lead engineer that writes project/migration MOPs
+  - Responsible for security inspection VPCs utilizing Check Point firewalls
+  - Responsible for BloxOne Threat Defense, SaaS service for external DNS lookups
+  - Responsible for all Check Point firewalls running in AWS`);
 
 const app = new Hono()
 
@@ -26,8 +27,6 @@ app.use(renderer)
 app.use('/public/*', serveStatic({ root: './' }))
 
 app.get('/', (c) => {
-  // const cloudText = loadMarkdown('./public/static/markdown/cloud.md');
-  // const resumeText = loadMarkdown('./public/static/markdown/resume.md');
 
   return c.render(
     <html>
@@ -44,14 +43,14 @@ app.get('/', (c) => {
             <h1>Alan DeBoer</h1>
             <p class="subtitle">Cloud & Infrastructure Engineer</p>
             <div class="social-links">
-            <p>alan.deboer@outlook.com</p>
+              <p>alan.deboer@outlook.com</p>
               <a href="https://www.linkedin.com/in/alan-deboer-37b4b663" class="social-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
           </header>
 
 
-  <div id="hover-display" class="hover-display">
-  </div>
+          <div id="hover-display" class="hover-display">
+          </div>
 
           <div class="grid-container">
             <div class="grid-item" data-category="cloud" data-text={cloudText}>
