@@ -14,7 +14,7 @@ app.get('/', (c) => {
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Alan DeBoer - Portfolio</title>
-        <link rel="stylesheet" href="/css/styles.css" />
+        <link rel="stylesheet" href="/static/styles.css" />
         <script src="/public/js/main.js" defer></script>
       </head>
       <body>
@@ -30,35 +30,35 @@ app.get('/', (c) => {
 
           <div class="grid-container">
             <div class="grid-item" data-category="cloud">
-              <img src="/public/images/cloud.png" alt="Cloud Computing" />
+              <img src="/static/cloud.png" alt="Cloud Computing" />
               <div class="content">
               <h2>Cloud</h2>
               </div>
             </div>
 
             <div class="grid-item" data-category="cod">
-              <img src="/public/images/code_automation.png" alt="Infrastructure as Code" />
+              <img src="/static/code_automation.png" alt="Infrastructure as Code" />
               <div class="content">
               <h2>Infrastructure as Code</h2>
               </div>
             </div>
 
             <div class="grid-item" data-category="observability">
-              <img src="/public/images/observability.png" alt="Observability" />
+              <img src="/static/observability.png" alt="Observability" />
               <div class="content">
               <h2>Observability</h2>
               </div>
             </div>
 
             <div class="grid-item" data-category="networking">
-              <img src="/public/images/networking.png" alt="Networking" />
+              <img src="/static/networking.png" alt="Networking" />
               <div class="content">
               <h2>Networking</h2>
               </div>
             </div>
 
             <div class="grid-item" data-category="resume">
-              <img src="/public/images/resume.png" alt="Resume" />
+              <img src="/static/resume.png" alt="Resume" />
               <div class="content">
               <h2>Resume</h2>
               </div>
