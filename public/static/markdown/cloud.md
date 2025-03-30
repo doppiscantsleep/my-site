@@ -1,0 +1,2 @@
+- 7 years experience in AWS
+    - Managing direct connect, DXGWs, TGWs, VPC & Subnet routing

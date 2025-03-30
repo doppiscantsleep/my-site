@@ -1,6 +1,13 @@
 import { Hono } from 'hono'
 import { renderer } from './renderer'
 import { serveStatic } from '@hono/node-server/serve-static'
+import * as fs from 'fs';
+import { marked } from 'marked';
+
+function loadMarkdown(filePath: string): string {
+  const markdown = fs.readFileSync(filePath, 'utf-8');
+  return marked(markdown, { async: false }); // Converts Markdown to HTML
+}
 
 const app = new Hono()
 
@@ -8,6 +15,9 @@ app.use(renderer)
 app.use('/public/*', serveStatic({ root: './' }))
 
 app.get('/', (c) => {
+  const cloudText = loadMarkdown('./public/static/markdown/cloud.md');
+  const resumeText = loadMarkdown('./public/static/markdown/resume.md');
+
   return c.render(
     <html>
       <head>
@@ -30,11 +40,10 @@ app.get('/', (c) => {
 
 
   <div id="hover-display" class="hover-display">
-    Hover over a category to see details here.
   </div>
 
           <div class="grid-container">
-            <div class="grid-item" data-category="cloud" data-text="7+ years of experience in AWS">
+            <div class="grid-item" data-category="cloud" data-text={cloudText}>
               <img src="/static/images/cloud.png" alt="Cloud Computing" />
               <div class="content">
                 <h2>Cloud</h2>
@@ -62,7 +71,7 @@ app.get('/', (c) => {
               </div>
             </div>
 
-            <div class="grid-item" data-category="resume">
+            <div class="grid-item" data-category="resume" data-text={resumeText}>
               <img src="/static/images/resume.png" alt="Resume" />
               <div class="content">
                 <h2>Resume</h2>

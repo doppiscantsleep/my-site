@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
   
     gridItems.forEach(item => {
       item.addEventListener('mouseover', () => {
-        const text = item.getAttribute('data-text');
-        hoverDisplay.textContent = text;
+        const htmlContent = item.getAttribute('data-text'); // Get the pre-parsed HTML
+        hoverDisplay.innerHTML = htmlContent; // Inject the HTML into the hover display
         hoverDisplay.classList.add('visible'); // Add the visible class to fade in
       });
   
