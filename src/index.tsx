@@ -21,15 +21,20 @@ app.get('/', (c) => {
         <div class="container">
           <header>
             <h1>Alan DeBoer</h1>
+            <p class="subtitle">Cloud & Infrastructure Engineer</p>
             <div class="social-links">
-              <a href="mailto:your.email@example.com" class="social-link">Email</a>
+            <p>alan.deboer@outlook.com</p>
               <a href="https://www.linkedin.com/in/alan-deboer-37b4b663" class="social-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
-            <p class="subtitle">Cloud & Infrastructure Engineer</p>
           </header>
 
+
+  <div id="hover-display" class="hover-display">
+    Hover over a category to see details here.
+  </div>
+
           <div class="grid-container">
-            <div class="grid-item" data-category="cloud">
+            <div class="grid-item" data-category="cloud" data-text="7+ years of experience in AWS">
               <img src="/static/images/cloud.png" alt="Cloud Computing" />
               <div class="content">
                 <h2>Cloud</h2>

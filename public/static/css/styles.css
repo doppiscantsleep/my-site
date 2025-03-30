@@ -2,26 +2,38 @@
     --primary-color: #2c3e50;
     --secondary-color: #3498db;
     --background-color: #f5f6fa;
-    --comic-font: "Comic Sans MS", "Comic Sans", cursive;
+    --comic-font: "Trebuchet MS", "Verdana", sans-serif; /* Updated font stack */
 }
 
 body {
     font-family: var(--comic-font);
 }
 
-h1, p, .subtitle { 
+h1 { 
     font-family: var(--comic-font);
-    font-size: 14px;
+    font-size: 15px;
+}
+
+.subtitle { 
+    font-family: var(--comic-font);
+    font-size: 12px;
 }
 
 h2 {
     font-family: var(--comic-font);
 }
 
-.social-links {
-    margin: 0.5rem 0;
+p { 
+    font-family: var(--comic-font);
     font-size: 12px;
 }
+
+
+p, .social-links {
+    margin: 0.5rem 0;
+    font-size: 11px;
+}
+
 
 .social-link {
     color: var(--secondary-color);
@@ -40,38 +52,69 @@ h2 {
 }
 
 .grid-container {
-    max-width: 600px;  /* Reduced from 800px */
+    max-width: 200px;  /* Reduced from 800px */
     margin: 0 auto 0 2rem;  /* Changed from 'margin: 0 auto' to align left */
 }
 
-.grid-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
 .grid-item {
-    background: white;
-    border-radius: 10px;
-    padding: 1rem 1.5rem;  /* Slightly reduced padding */
-    margin-bottom: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    position: relative;
     display: flex;
     align-items: center;
     text-align: left;
-}
-
-.grid-item img {
-    width: 32px;  /* Reduced from 48px */
-    height: 32px;  /* Reduced from 48px */
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .grid-item img {
+    width: 48px;
+    height: 48px;
     object-fit: contain;
-    margin-right: 1.5rem;
-    flex-shrink: 0;
-}
-
-.grid-item .content {
+    margin-right: 1rem;
+  }
+  
+  .grid-item .content {
     flex-grow: 1;
-}
+  }
+  
+  .grid-item .hover-text {
+    display: none; /* Hide the text by default */
+    margin-left: 1rem;
+    color: #666;
+    font-size: 0.9rem;
+  }
+  
+  .grid-item:hover .hover-text {
+    display: block; /* Show the text on hover */
+  }
+  
+  .grid-item:hover {
+    transform: scale(1.02); /* Slightly enlarge the grid item on hover */
+  }
+
+  .hover-display {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.2rem;
+    color: #333;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    max-width: 600px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease-in-out; /* Smooth fade-in and fade-out */
+  }
+  
+  .hover-display.visible {
+    opacity: 1; /* Fully visible when the class is added */
+  }
 
 .grid-item h2 {
     margin: 0 0 0.5rem 0;
@@ -90,7 +133,7 @@ h2 {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 300px) {
     .grid-container {
         margin: 0 1rem;
         max-width: 100%;

@@ -1,18 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
     const gridItems = document.querySelectorAll('.grid-item');
-
+    const hoverDisplay = document.getElementById('hover-display');
+  
     gridItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const category = item.getAttribute('data-category');
-            
-            // Remove active class from all items
-            gridItems.forEach(i => i.classList.remove('active'));
-            
-            // Add active class to clicked item
-            item.classList.add('active');
-            
-            // You can add more interactions here
-            console.log(`Selected category: ${category}`);
-        });
+      item.addEventListener('mouseover', () => {
+        const text = item.getAttribute('data-text');
+        hoverDisplay.textContent = text;
+        hoverDisplay.classList.add('visible'); // Add the visible class to fade in
+      });
+  
+      item.addEventListener('mouseout', () => {
+        hoverDisplay.classList.remove('visible'); // Remove the visible class to fade out
+      });
     });
-});
+  });
