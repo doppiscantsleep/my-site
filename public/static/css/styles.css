@@ -119,12 +119,11 @@ p,
     overflow-y: auto;
     max-height: 300px;
     opacity: 0;
-    /* Initially hidden */
     transition: opacity 0.5s ease-in-out;
-    /* Smooth fade-in and fade-out */
     font-size: 13px;
     text-align: left;
 }
+
 
 .hover-display h2,
 .hover-display h3 {
