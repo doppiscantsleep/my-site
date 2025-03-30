@@ -15,7 +15,7 @@ app.get('/', (c) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Alan DeBoer - Portfolio</title>
         <link rel="stylesheet" href="/static/styles.css" />
-        <script src="/public/js/main.js" defer></script>
+        <script src="/static/main.js" defer></script>
       </head>
       <body>
         <div class="container">
