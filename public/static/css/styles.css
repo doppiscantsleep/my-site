@@ -1,0 +1,102 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --background-color: #f5f6fa;
+    --comic-font: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+body {
+    font-family: var(--comic-font);
+}
+
+h1, p, .subtitle { 
+    font-family: var(--comic-font);
+    font-size: 14px;
+}
+
+h2 {
+    font-family: var(--comic-font);
+}
+
+.social-links {
+    margin: 0.5rem 0;
+    font-size: 12px;
+}
+
+.social-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+    margin: 0 1rem;
+    font-family: var(--comic-font);
+}
+
+.social-link:hover {
+    text-decoration: underline;
+}
+
+.container {
+    padding: 2rem;
+    max-width: 100%;
+}
+
+.grid-container {
+    max-width: 600px;  /* Reduced from 800px */
+    margin: 0 auto 0 2rem;  /* Changed from 'margin: 0 auto' to align left */
+}
+
+.grid-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.grid-item {
+    background: white;
+    border-radius: 10px;
+    padding: 1rem 1.5rem;  /* Slightly reduced padding */
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.grid-item img {
+    width: 32px;  /* Reduced from 48px */
+    height: 32px;  /* Reduced from 48px */
+    object-fit: contain;
+    margin-right: 1.5rem;
+    flex-shrink: 0;
+}
+
+.grid-item .content {
+    flex-grow: 1;
+}
+
+.grid-item h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 11px;
+}
+
+.grid-item p {
+    margin: 0;
+    color: #666;
+}
+
+.grid-item.active {
+    transform: scale(1.02);
+    border: 2px solid var(--secondary-color);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .grid-container {
+        margin: 0 1rem;
+        max-width: 100%;
+    }
+    
+    .grid-item {
+        padding: 0.75rem 1rem;
+    }
+}
